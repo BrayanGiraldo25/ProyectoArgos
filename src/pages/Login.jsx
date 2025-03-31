@@ -17,8 +17,8 @@ function Login() {
     // console.log(getDocumento);
     // console.log(getPlanta);
     // console.log(getContraseña);
-    console.log(getUsuario);
-    console.log(getContraseñaInicioSesion);
+    // console.log(getUsuario);
+    // console.log(getContraseñaInicioSesion);
     
 
     function vistaFormRegistro() {
