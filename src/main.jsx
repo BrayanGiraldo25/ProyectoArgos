@@ -7,8 +7,8 @@ import Login from './pages/Login.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <Inventario /> 
-    <Logo /> 
+    <Inventario /> 
+    {/* <Logo /> 
     <Boton /> */}
     <Login />
   </StrictMode>,
