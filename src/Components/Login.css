@@ -1,0 +1,114 @@
+.sectionLogin{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loginRegistro{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 500px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    background-color:  rgb(246, 243, 243, 0.1);
+    box-shadow: 1px 1px 2px black;
+}
+
+.sectionLogin h1{
+    text-align: center;
+    font-size: 80px;
+    color: black;
+    /* -webkit-text-stroke: 1px rgb(123, 189, 2); */
+}
+
+.loginRegistro form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: auto;
+}
+.loginRegistro h2{
+    font-size: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: black;
+    /* -webkit-text-stroke: 1px rgb(123, 189, 2); */
+}
+
+.loginRegistro input{
+    margin: 10px auto;
+    width: 380px;
+    height: 28px;
+    background-color: #ddd;
+    border: solid 1px black;
+    border-radius: 4px;
+    padding-left: 5px;   
+}
+
+.btnLoginRegistro{
+    width: 400px;
+    height: 100px;
+    display: flex;
+    padding: 25px 0;
+    justify-content: space-around;
+}
+
+.loginIngreso{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 500px;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    background-color:  rgb(246, 243, 243, 0.1);
+    box-shadow: 1px 1px 2px black;
+}
+
+.loginIngreso form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 100%;
+}
+.loginIngreso h2{
+    font-size: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: black;
+    /* -webkit-text-stroke: 1px rgb(123, 189, 2); */
+}
+
+.loginIngreso input{
+    margin: 10px auto;
+    width: 380px;
+    height: 28px;
+    background-color: #ddd;
+    border: solid 1px black;
+    border-radius: 4px;
+    padding-left: 5px;   
+}
+
+.btnLoginInicioSesion{
+    width: 400px;
+    height: 100px;
+    display: flex;
+    padding: 25px 0;
+    justify-content: space-around;
+}
