@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 /* lista de clases reutilizables */
 .hidden{
     display: none;

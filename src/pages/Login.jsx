@@ -1,6 +1,6 @@
 import "../assets/styles.css"
 import "../Components/Boton.css"
-import "../Components/Login.css"
+import "./Login.css"
 import React, {useState} from "react";
 
 function Login() {
