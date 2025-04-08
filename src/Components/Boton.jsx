@@ -3,9 +3,9 @@ import './Boton.css'
 
 function Boton() {
   return (
-    <div className='Botones'>
-    <button> Registro </button>
-    <button> Inicio </button>
+    <div className='BotonesLogo'>
+    <button className='Botones'> Registro </button>
+    <button className='Botones'> Inicio </button>
     </div>
   )
 }

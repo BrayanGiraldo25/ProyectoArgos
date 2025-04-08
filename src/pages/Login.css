@@ -4,14 +4,15 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 20px;
 }
 
 .loginRegistro{
     position: absolute;
-    top: 80%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -50%);
     width: 500px;
     height: 50vh;
     display: flex;
@@ -65,9 +66,9 @@
 
 .loginIngreso{
     position: absolute;
-    top: 80%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -50%);
     width: 500px;
     height: 45vh;
     display: flex;

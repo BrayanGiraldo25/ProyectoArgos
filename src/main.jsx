@@ -4,12 +4,14 @@ import Inventario from './Components/Inventario.jsx'
 import Logo from './Components/Logo.jsx'
 import Boton from './Components/Boton.jsx'
 import Login from './pages/Login.jsx'
+import Home from './pages/Home.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Inventario /> 
     {/* <Logo /> 
-    <Boton /> */}
-    <Login />
+    <Boton /> 
+    <Login /> */}
+    <Home />
   </StrictMode>,
 )
