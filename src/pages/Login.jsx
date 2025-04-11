@@ -2,8 +2,15 @@ import "../assets/styles.css"
 import "../Components/Boton.css"
 import "./Login.css"
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+    const navigate = useNavigate()
+
+    const Inventario = () => {
+        navigate('/Home')
+    }
+
     const [mostrarFormRegistro, setMostrarFormRegistro] = useState(false);
     const [mostrarFomrInicioSesion, setMostrarFormInicioSesion] = useState(true);
     const [getNombre, setNombre] = useState("");
@@ -33,6 +40,7 @@ function Login() {
     
     return(
         <section className="sectionLogin">
+            <div className="Fondo"></div>
             <h1>Inventarios Argos</h1>
             <div className={`${!mostrarFormRegistro ? 'hidden' : 'loginRegistro'}`}>                
                 <form action="" id="formRegistro">
@@ -50,11 +58,11 @@ function Login() {
             <div className= {`${!mostrarFomrInicioSesion ? 'hidden' : 'loginIngreso'}`}>
                 <form action="" id="formInicioSesion">
                     <h2>Inicio de sesion</h2>
-                    <input onChange={(e) => setUsuario(e.target.value)}  type="text" id="usuario"  placeholder="Usuario" required/>
-                    <input onChange={(e) => setContraseñaInicioSesion(e.target.value)}  type="password" id="contraseñaInicioSesion" placeholder="Contraseña"  autoComplete="current-password" required/>
+                    <input onChange={(e) => setUsuario(e.target.value)}  type="text" id="usuario"  placeholder="Usuario" setUsuario required/>
+                    <input onChange={(e) => setContraseñaInicioSesion(e.target.value)}  type="password" id="contraseñaInicioSesion" placeholder="Contraseña"  autoComplete="current-password" setContraseña required/>
                 </form>
                 <div className="btnLoginInicioSesion">
-                        <button type="button" className="Botones">Iniciar sesión</button>
+                        <button type="button" className="Botones" onClick={Inventario}>Iniciar sesión</button>
                         <button type="button" className="Botones" onClick={vistaFormRegistro}>Registrarse</button>
                 </div>
             </div>

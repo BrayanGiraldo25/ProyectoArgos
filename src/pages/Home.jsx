@@ -1,19 +1,28 @@
-import './Home.css'
-import { useState } from 'react';
-function Home() {
-    
-    const [resgistrarInventario, setRegistrarInventario] = useState(false);
-    const [registrarMateriaPrima, setRegistrarMateriaPrima] = useState(false);
-    const [registrarDescargue, setRegistroDescargue] = useState(false);
+import "./Home.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-    return(
-        <section className="home">
-            <div className="contenedor-botones">
-                <button className="Botones">Inventario</button>
-                <button className="Botones">Registro Materia Prima</button>
-                <button className="Botones">Registro Descargue</button>
-            </div>
-        </section>
-    )
+function Home() {
+  const navigate = useNavigate();
+
+  const irAInventario = () => {
+    navigate("/inventario");
+  };
+  const [resgistrarInventario, setRegistrarInventario] = useState(false);
+  const [registrarMateriaPrima, setRegistrarMateriaPrima] = useState(false);
+  const [registrarDescargue, setRegistroDescargue] = useState(false);
+
+  return (
+    <section className="home">
+      <div className="Fondo"></div>
+      <div className="contenedor-botones">
+        <button className="Botones" onClick={irAInventario}>
+          Inventario
+        </button>
+        <button className="Botones">Registro Materia Prima</button>
+        <button className="Botones">Registro Descargue</button>
+      </div>
+    </section>
+  );
 }
 export default Home;

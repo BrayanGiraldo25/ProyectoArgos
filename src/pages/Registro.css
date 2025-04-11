@@ -1,0 +1,86 @@
+.Titulo {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.Sede {
+  font-size: 42px;
+  font-family: Arial;
+  color: white;
+  padding: 80px;
+  width: 700px;
+  height: 500px;
+  background-color: rgb(123, 189, 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.SelectPlanta {
+  width: 300px;
+  height: 45px;
+  padding: 0 1rem;
+  font-size: 18px;
+  border: 2px solid #7bbd02;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+  background-size: 12px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.SelectSede {
+  width: 300px;
+  height: 45px;
+  padding: 0 1rem;
+  font-size: 18px;
+  border: 2px solid #7bbd02;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+  background-size: 12px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Boton para continuar */
+.buttonContinuar {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttonContinuar:hover {
+  transform: scale(1.05);
+  border-color: rgba(0, 0, 0, 0.349);
+}

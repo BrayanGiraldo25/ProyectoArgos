@@ -1,24 +1,51 @@
-.home{
-    width: 100%;
-    height: 100vh; 
-    position: relative;  
+.home {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
-.contenedor-botones{
-    width: 400px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(123, 189, 2);
-    border-radius: 10px;
+.Fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/Argosfondo.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: -1;
 }
 
-.contenedor-botones button{
-    height: 4.2rem;
+.contenedor-botones {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(123, 189, 2);
+  border-radius: 10px;
+}
+
+.contenedor-botones button {
+  height: 4.2rem;
+  background-color: rgb(123, 189, 2);
+  box-shadow: 1px black;
+  border-radius: 10px;
+  width: 300px;
+  font-size: 25px;
+  color: white;
+}
+
+.contenedor-botones button:hover {
+  height: 4.8rem;
+  background-color: white;
+  color: rgb(123, 189, 2);
+  transition: all 0.25s ease;
 }
