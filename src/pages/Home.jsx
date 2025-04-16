@@ -8,6 +8,10 @@ function Home() {
   const irAInventario = () => {
     navigate("/inventario");
   };
+
+function irARegistroDescargue() {
+  navigate("/registroDescargue");
+}  
   const [resgistrarInventario, setRegistrarInventario] = useState(false);
   const [registrarMateriaPrima, setRegistrarMateriaPrima] = useState(false);
   const [registrarDescargue, setRegistroDescargue] = useState(false);
@@ -20,7 +24,7 @@ function Home() {
           Inventario
         </button>
         <button className="Botones">Registro Materia Prima</button>
-        <button className="Botones">Registro Descargue</button>
+        <button className="Botones" onClick={irARegistroDescargue}>Registro Descargue</button>
       </div>
     </section>
   );
