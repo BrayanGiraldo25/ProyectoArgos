@@ -23,7 +23,7 @@ function irARegistroDescargue() {
         <button className="Botones"  onClick={irAInventario}>
           Inventario
         </button>
-        <a href="http://localhost:5182/FormularioAditivos">
+        {/* <a href="http://localhost:5182/FormularioAditivos"> */}
         <button className="Botones">Registro Materia Prima</button>
         <button className="Botones">Registro Descargue</button>
       </div>
