@@ -26,6 +26,7 @@ function Registro() {
     <section>
       <Inventario />
       <h1 className="Titulo">Inventario de Registro</h1>
+
       {/* Contenedor Sede */}
       <div className={`${!mostrarOtroContenedor ? "Sede" : "hidden"}`}>
         <p>Planta</p>
@@ -50,8 +51,9 @@ function Registro() {
             ></path>
           </svg>
         </button>
-        {/* Contenedor Silo Silo */}
       </div>
+
+        {/* Contenedor Silo Silo */}
       <div className={`${mostrarRegistro ? "Silo" : "hidden"}`}>
         <p>Silos</p>
         <select
@@ -84,6 +86,7 @@ function Registro() {
             </select>
           </>
         )}
+
         {/* Adictivos */}
         <p>Adictivos</p>
         <select className="SelectPlanta">
@@ -107,6 +110,7 @@ function Registro() {
           <option value="Opcion 3">ACPM</option>
           <option value="Opcion 4">Contador del Agua</option>
         </select>
+
         {/* Boton para Finalizar */}
         <button class="buttonContinuar" onClick={VolverInventario}>
           Finalizar
@@ -118,6 +122,7 @@ function Registro() {
             ></path>
           </svg>
         </button>
+        
         {/* Boton para Regresar */}
         <button class="buttonRegresar" onClick={handleRegistro}>
           Regresar
