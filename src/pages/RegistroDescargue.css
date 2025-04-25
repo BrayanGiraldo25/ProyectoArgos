@@ -13,7 +13,7 @@ section h1{
     color: black;
 }
 
-section form{
+.seccion_registro_descargue form{
     position: relative;
     width: 700px;
     height: 520px;

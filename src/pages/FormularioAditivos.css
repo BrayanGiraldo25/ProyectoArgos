@@ -25,18 +25,18 @@
     margin-bottom: 20px;
   }
   
-  form {
+  /* form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-  }
+  } */
   
-  label {
+  /* label {
     font-weight: bold;
     color: #003366;
-  }
+  } */
   
-  input,
+  /* input,
   select,
   textarea {
     padding: 10px;
@@ -44,7 +44,7 @@
     border-radius: 8px;
     font-size: 1rem;
     width: 100%;
-  }
+  } */
   
   textarea {
     resize: none;

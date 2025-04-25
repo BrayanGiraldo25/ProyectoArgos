@@ -13,7 +13,7 @@ function RegistroDescargue() {
   const [getobservacionesDescargue, setobservacionesDescargue] = useState("");
 
   return (
-    <section>
+    <section className="seccion_registro_descargue">
       <Inventario />
       <h1>Registro Descargue</h1>
       <form action="">
