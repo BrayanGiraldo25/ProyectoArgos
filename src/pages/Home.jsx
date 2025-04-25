@@ -8,10 +8,14 @@ function Home() {
   const irAInventario = () => {
     navigate("/inventario");
   };
+ 
+  function irARegistroDescargue() {
+    navigate("/registroDescargue");
+  } 
 
-function irARegistroDescargue() {
-  navigate("/registroDescargue");
-}  
+  function irARegistroMateriaPrima() {
+    navigate("/formularioAdictivos"); 
+  }
   const [resgistrarInventario, setRegistrarInventario] = useState(false);
   const [registrarMateriaPrima, setRegistrarMateriaPrima] = useState(false);
   const [registrarDescargue, setRegistroDescargue] = useState(false);
@@ -23,9 +27,8 @@ function irARegistroDescargue() {
         <button className="Botones"  onClick={irAInventario}>
           Inventario
         </button>
-        {/* <a href="http://localhost:5182/FormularioAditivos"> */}
-        <button className="Botones">Registro Materia Prima</button>
-        <button className="Botones">Registro Descargue</button>
+        <button className="Botones" onClick={irARegistroMateriaPrima}>Registro Materia Prima</button>
+        <button className="Botones" onClick={irARegistroDescargue}>Registro Descargue</button>
       </div>
     </section>
   );
