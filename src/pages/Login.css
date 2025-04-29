@@ -8,19 +8,6 @@
     padding: 20px;
 }
 
-.Fondo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../assets/Argosfondo.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.5; 
-    z-index: -1;
-  }
-
 .loginRegistro{
     position: absolute;
     top: 50%;
@@ -100,6 +87,7 @@
     justify-content: center;
     width: 400px;
     height: 100%;
+    /* background-color: transparent; */
 }
 .loginIngreso h2{
     font-size: 50px;

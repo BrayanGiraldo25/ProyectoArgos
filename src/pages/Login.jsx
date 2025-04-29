@@ -3,14 +3,9 @@ import "../Components/Boton.css"
 import "./Login.css"
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
+import Inventario from "../Components/Inventario";
 
 function Login() {
-    const navigate = useNavigate()
-
-    const Inventario = () => {
-        navigate('/Home')
-    }
-
     const [mostrarFormRegistro, setMostrarFormRegistro] = useState(false);
     const [mostrarFomrInicioSesion, setMostrarFormInicioSesion] = useState(true);
     const [getNombre, setNombre] = useState("");
@@ -40,7 +35,7 @@ function Login() {
     
     return(
         <section className="sectionLogin">
-            <div className="Fondo"></div>
+            <Inventario />
             <h1>Inventarios Argos</h1>
             <div className={`${!mostrarFormRegistro ? 'hidden' : 'loginRegistro'}`}>                
                 <form action="" id="formRegistro">
