@@ -31,9 +31,7 @@ function Registro() {
       <div className={`${!mostrarOtroContenedor ? "Sede" : "hidden"}`}>
         <p>Planta</p>
         <select className="SelectPlanta">
-          <option value="Planta A">Planta A</option>
-          <option value="Planta B">Planta B</option>
-          <option value="Planta C">Planta C</option>
+          <option value="Planta A">Planta Medellin</option>
         </select>
         <p>Sede</p>
         <select className="SelectSede">
