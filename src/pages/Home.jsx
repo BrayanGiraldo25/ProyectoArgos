@@ -16,14 +16,19 @@ function Home() {
   function irARegistroMateriaPrima() {
     navigate("/formularioAdictivos");
   }
-  const [resgistrarInventario, setRegistrarInventario] = useState(false);
-  const [registrarMateriaPrima, setRegistrarMateriaPrima] = useState(false);
-  const [registrarDescargue, setRegistroDescargue] = useState(false);
+
+  let usuarioLogueado = localStorage.getItem("usuario");
+
+  function cerrar_sesion() {
+    navigate("/");
+    usuarioLogueado = localStorage.removeItem("usuario")
+  }
 
   return (
     <section className="home">
       <div className="Fondo"></div>
       <div className="contenedor-botones">
+        <h3>Bienvenido: {usuarioLogueado}</h3>
         <button className="Botones" onClick={irAInventario}>
           Inventario
         </button>
@@ -32,6 +37,9 @@ function Home() {
         </button>
         <button className="Botones" onClick={irARegistroMateriaPrima}>
           Registro Materia Prima
+        </button>
+        <button className="Botones" onClick={cerrar_sesion}>
+          Cerrar Sesión
         </button>
       </div>
     </section>

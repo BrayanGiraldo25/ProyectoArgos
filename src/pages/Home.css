@@ -5,6 +5,12 @@
   overflow: hidden;
 }
 
+h3{
+  font-size: 26px;
+  color: white;
+  border-bottom: 3px solid white;
+}
+
 .Fondo {
   position: absolute;
   top: 0;
@@ -20,7 +26,7 @@
 
 .contenedor-botones {
   width: 400px;
-  height: 500px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
