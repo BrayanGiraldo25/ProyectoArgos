@@ -1,29 +1,37 @@
 import "./Home.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { alerta_redireccion } from "../helpers/funciones";
 
 function Home() {
-  const navigate = useNavigate();
+  const redireccion = useNavigate();
 
   const irAInventario = () => {
-    navigate("/inventario");
+    redireccion("/inventario");
   };
 
   function irARegistroDescargue() {
-    navigate("/registroDescargue");
+    redireccion("/registroDescargue");
   }
 
   function irARegistroMateriaPrima() {
-    navigate("/formularioAdictivos");
+    redireccion("/formularioAdictivos");
   }
-  const [resgistrarInventario, setRegistrarInventario] = useState(false);
-  const [registrarMateriaPrima, setRegistrarMateriaPrima] = useState(false);
-  const [registrarDescargue, setRegistroDescargue] = useState(false);
+
+  let usuarioLogueado = localStorage.getItem("usuario");
+
+  function cerrar_sesion() {
+    alerta_redireccion("/", redireccion, "Hasta pronto")
+    usuarioLogueado = localStorage.removeItem("usuario")
+    token = localStorage.removeItem("token");
+  }
 
   return (
     <section className="home">
       <div className="Fondo"></div>
       <div className="contenedor-botones">
+        <div className="contenedor-usuario">
+          <h3>Bienvenido: {usuarioLogueado}</h3>
+        </div>
         <button className="Botones" onClick={irAInventario}>
           Inventario
         </button>
@@ -32,6 +40,9 @@ function Home() {
         </button>
         <button className="Botones" onClick={irARegistroMateriaPrima}>
           Registro Materia Prima
+        </button>
+        <button className="Botones" onClick={cerrar_sesion}>
+          Cerrar Sesión
         </button>
       </div>
     </section>

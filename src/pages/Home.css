@@ -5,6 +5,13 @@
   overflow: hidden;
 }
 
+h3{
+  font-size: 26px;
+  color: white;
+  border-bottom: 3px solid white;
+  letter-spacing: 0.1rem;
+}
+
 .Fondo {
   position: absolute;
   top: 0;
@@ -20,7 +27,7 @@
 
 .contenedor-botones {
   width: 400px;
-  height: 500px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -31,6 +38,16 @@
   transform: translate(-50%, -50%);
   background-color: rgb(123, 189, 2);
   border-radius: 10px;
+}
+
+.contenedor-usuario{
+  width: 90%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: center;
 }
 
 .contenedor-botones button {

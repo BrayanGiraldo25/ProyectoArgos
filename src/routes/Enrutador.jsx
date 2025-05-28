@@ -5,34 +5,32 @@ import Login from "../pages/Login";
 import RegistroDescargue from "../pages/RegistroDescargue";
 import FormularioAditivos from "../pages/FormularioAditivos";
 import Inicio from "../pages/Inicio";
+import RutaProtegida from "../Components/RutaProtegida";
+import OcultarVista from "../Components/OcultarVista";
 
 export const enrutador = createBrowserRouter([
   {
     path: "/",
-    element: <Inicio />,
+    element: <OcultarVista contenido={<Inicio />}/>
   },
   {
     path: "/login",
-    element: <Login />,
+    element: <OcultarVista contenido={<Login />}/>
   },
   {
     path: "/home",
-    element: <Home />,
+    element: <RutaProtegida contenido={<Home />} />
   },
   {
     path: "/inventario",
-    element: <Registro />,
+    element: <RutaProtegida contenido={<Registro />} />
   },
   {
     path: "/registroDescargue",
-    element: <RegistroDescargue />
+    element: <RutaProtegida contenido={<RegistroDescargue />} />
   },
   {
     path: "/formularioAdictivos",
-    element: <FormularioAditivos />,
+    element: <RutaProtegida contenido={<FormularioAditivos />} />
   }
-
-
-
-
 ]);
