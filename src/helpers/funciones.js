@@ -16,10 +16,10 @@ export function aletrta_error(mensaje) {
     });
 }
 
-export function alerta_redireccion(path, redireccion) {
+export function alerta_redireccion(path, redireccion, titulo) {
     let timerInterval;
     Swal.fire({
-        title: "Bienvenido",
+        title: titulo,
         html: "Redirigiendo a el home en <b></b> milisegundos.",
         timer: 2000,
         icon: "success",
@@ -35,4 +35,8 @@ export function alerta_redireccion(path, redireccion) {
             redireccion(path)
         }
     })
+}
+
+export function generar_token() {
+    return Math.random().toString(36).substring(2,10) + "-" + Math.random().toString(36).substring(2,10);
 }

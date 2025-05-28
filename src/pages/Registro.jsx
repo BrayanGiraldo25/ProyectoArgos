@@ -59,7 +59,7 @@ function Registro() {
           value={siloSeleccionado}
           onChange={(e) => setSiloSeleccionado(e.target.value)}
         >
-          <option value="">Selecciona un silo</option>
+          <option value="">Selecciona la linea</option>
           <option value="Erie 501">Erie 501</option>
           <option value="Elba 502">Elba 502</option>
         </select>

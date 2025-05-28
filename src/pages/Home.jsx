@@ -1,34 +1,37 @@
 import "./Home.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { alerta_redireccion } from "../helpers/funciones";
 
 function Home() {
-  const navigate = useNavigate();
+  const redireccion = useNavigate();
 
   const irAInventario = () => {
-    navigate("/inventario");
+    redireccion("/inventario");
   };
 
   function irARegistroDescargue() {
-    navigate("/registroDescargue");
+    redireccion("/registroDescargue");
   }
 
   function irARegistroMateriaPrima() {
-    navigate("/formularioAdictivos");
+    redireccion("/formularioAdictivos");
   }
 
   let usuarioLogueado = localStorage.getItem("usuario");
 
   function cerrar_sesion() {
-    navigate("/");
+    alerta_redireccion("/", redireccion, "Hasta pronto")
     usuarioLogueado = localStorage.removeItem("usuario")
+    token = localStorage.removeItem("token");
   }
 
   return (
     <section className="home">
       <div className="Fondo"></div>
       <div className="contenedor-botones">
-        <h3>Bienvenido: {usuarioLogueado}</h3>
+        <div className="contenedor-usuario">
+          <h3>Bienvenido: {usuarioLogueado}</h3>
+        </div>
         <button className="Botones" onClick={irAInventario}>
           Inventario
         </button>

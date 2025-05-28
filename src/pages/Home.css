@@ -9,6 +9,7 @@ h3{
   font-size: 26px;
   color: white;
   border-bottom: 3px solid white;
+  letter-spacing: 0.1rem;
 }
 
 .Fondo {
@@ -37,6 +38,16 @@ h3{
   transform: translate(-50%, -50%);
   background-color: rgb(123, 189, 2);
   border-radius: 10px;
+}
+
+.contenedor-usuario{
+  width: 90%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: center;
 }
 
 .contenedor-botones button {
