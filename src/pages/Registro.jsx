@@ -2,6 +2,7 @@ import Inventario from "../Components/Inventario";
 import "./Registro.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
 function Registro() {
   const [siloSeleccionado, setSiloSeleccionado] = useState("");
@@ -25,22 +26,36 @@ function Registro() {
   return (
     <section>
       <Inventario />
-      <h1 className="Titulo">Inventario de Registro</h1>
 
+      <h1 className="Titulo">Inventario de Registro</h1>
       {/* Contenedor Sede */}
       <div className={`${!mostrarOtroContenedor ? "Sede" : "hidden"}`}>
+        
         <p>Planta</p>
         <select className="SelectPlanta">
+          <option value="">---</option>
           <option value="Planta A">Planta Medellin</option>
         </select>
-        <p>Sede</p>
-        <select className="SelectSede">
+        {/* <p>Sede</p>
+        {<select className="SelectSede">
+          <option value="">---</option>
           <option value="Planta A">Sede A</option>
           <option value="Planta B">Sede B</option>
           <option value="Planta C">Sede C</option>
-        </select>
+        </select>} */}
         <button class="buttonContinuar" onClick={handleContinuar}>
           Continuar
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+
+        <button className="buttonRegresar" onClick={VolverInventario}>
+          Volver
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
             <path
               fill-rule="evenodd"
@@ -65,8 +80,9 @@ function Registro() {
         </select>
         {siloSeleccionado === "Erie 501" && (
           <>
-            <h6>Se selecciono Erie 501</h6>
-            <select className="SelectSubcategoria">
+            <h5>Se selecciono Erie 501</h5>
+            <select className="SelectSubcategoria" required>
+              <option value="Opción 0">---</option>
               <option value="Opción 1">Johnson Cemetante</option>
               <option value="Opción 2">Erie UG</option>
               <option value="Opción 3">Erie Ceniza</option>
@@ -75,19 +91,23 @@ function Registro() {
         )}
         {siloSeleccionado === "Elba 502" && (
           <>
-            <h6>Se selecciono Elba 502</h6>
+            <h5>Se selecciono Elba 502</h5>
             <select className="SelectSubcategoria">
-              <option value="Opción 1">Silo 1 Elba Ceniza</option>
-              <option value="Opción 2">Silo 2 Johnson Cemetante</option>
-              <option value="Opción 3">Silo 3 Elba cemento Blanco</option>
-              <option value="Opción 3">Silo 4 Elba Reserva</option>
+              <option value="Opción 0">---</option>
+              <option value="Opción 1">Elba Ceniza</option>
+              <option value="Opción 2">Johnson Cemetante</option>
+              <option value="Opción 3">Elba cemento Blanco</option>
+              <option value="Opción 3">Elba Reserva</option>
             </select>
           </>
         )}
+        <div className="Adictivos"> 
+
 
         {/* Adictivos */}
         <p>Adictivos</p>
-        <select className="SelectPlanta">
+        <select className="SelectPlanta" required>
+          <option value="Opcion 0">---</option>
           <option value="Opcion 1">Plastiment 160 SO</option>
           <option value="Opcion 2">SikaPlast</option>
           <option value="Opcion 3">AER-D</option>
@@ -101,16 +121,23 @@ function Registro() {
           <option value="Opcion 11">SikaFume</option>
           <option value="Opcion 11">Fibra Dramix</option>
         </select>
+        <input type="text" required placeholder="Cantidad Ingresada"/>
+        </div>
+        <div className="Varios"> 
+          
         <p>Varios</p>
-        <select className="SelectPlanta">
+        <select className="SelectPlanta" required>
+          <option value="Opcion 0">---</option>
           <option value="Opcion 1">Hielo</option>
           <option value="Opcion 2">Urea</option>
           <option value="Opcion 3">ACPM</option>
           <option value="Opcion 4">Contador del Agua</option>
         </select>
+        <input type="text" required placeholder="Cantidad Ingresada"/>
+        </div>
 
         {/* Boton para Finalizar */}
-        <button class="buttonContinuar" onClick={VolverInventario}>
+        <button className="buttonContinuar" onClick={VolverInventario}>
           Finalizar
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
             <path
@@ -122,7 +149,7 @@ function Registro() {
         </button>
         
         {/* Boton para Regresar */}
-        <button class="buttonRegresar" onClick={handleRegistro}>
+        <button className="buttonRegresar" onClick={handleRegistro}>
           Regresar
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
             <path
