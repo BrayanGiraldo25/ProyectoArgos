@@ -1,9 +1,10 @@
 import "./Home.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { alerta_redireccion } from "../helpers/funciones";
 
 function Home() {
   const redireccion = useNavigate();
+  let usuario = JSON.parse(localStorage.getItem("usuario"));
 
   const irAInventario = () => {
     redireccion("/inventario");
@@ -17,11 +18,9 @@ function Home() {
     redireccion("/formularioAdictivos");
   }
 
-  let usuarioLogueado = localStorage.getItem("usuario");
-
   function cerrar_sesion() {
     alerta_redireccion("/", redireccion, "Hasta pronto")
-    usuarioLogueado = localStorage.removeItem("usuario")
+    usuario = localStorage.removeItem("usuario")
     token = localStorage.removeItem("token");
   }
 
@@ -30,7 +29,7 @@ function Home() {
       <div className="Fondo"></div>
       <div className="contenedor-botones">
         <div className="contenedor-usuario">
-          <h3>Bienvenido: {usuarioLogueado}</h3>
+          <h3>Bienvenido: {usuario.nombre}</h3>
         </div>
         <button className="Botones" onClick={irAInventario}>
           Inventario
@@ -39,7 +38,7 @@ function Home() {
           Registro Descargue
         </button>
         <button className="Botones" onClick={irARegistroMateriaPrima}>
-          Registro Materia Prima
+          Graficos de inventario
         </button>
         <button className="Botones" onClick={cerrar_sesion}>
           Cerrar Sesión
