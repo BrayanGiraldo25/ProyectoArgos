@@ -1,10 +1,21 @@
 import "./Home.css";
 import { useNavigate, Link } from "react-router-dom";
 import { alerta_redireccion } from "../helpers/funciones";
+import { useState, useEffect } from "react";
+let db_usuarios = "http://localhost:8080/usuarios"
 
 function Home() {
+  const [usuarios, setusuarios] = useState([]);
   const redireccion = useNavigate();
   let usuario = JSON.parse(localStorage.getItem("usuario"));
+  function getUsuarios() {
+    fetch(db_usuarios).then((response)=> response.json())
+    .then((data)=> setusuarios(data))
+    .catch((error)=> console.log(error)
+    )
+  }
+  useEffect(() => { getUsuarios() }, []);   
+      console.log(usuarios);
 
   const irAInventario = () => {
     redireccion("/inventario");
@@ -24,6 +35,15 @@ function Home() {
     token = localStorage.removeItem("token");
   }
 
+  
+  function eliminarUsuario() {
+    fetch(db_usuarios + "/" + usuario.documento, {
+      method: "DELETE"
+    }).then(()=> getUsuarios, cerrar_sesion())
+    .catch((error) => console.log(error)
+    )
+  }
+
   return (
     <section className="home">
       <div className="Fondo"></div>
@@ -31,17 +51,20 @@ function Home() {
         <div className="contenedor-usuario">
           <h3>Bienvenido: {usuario.nombre}</h3>
         </div>
-        <button className="Botones" onClick={irAInventario}>
+        <button  type="button" className="Botones" onClick={irAInventario}>
           Inventario
         </button>
-        <button className="Botones" onClick={irARegistroDescargue}>
+        <button  type="button" className="Botones" onClick={irARegistroDescargue}>
           Registro Descargue
         </button>
-        <button className="Botones" onClick={irARegistroMateriaPrima}>
+        <button  type="button" className="Botones" onClick={irARegistroMateriaPrima}>
           Graficos de inventario
         </button>
-        <button className="Botones" onClick={cerrar_sesion}>
+        <button  type="button" className="Botones" onClick={cerrar_sesion}>
           Cerrar Sesión
+        </button>
+        <button  type="button" className="Botones" onClick={eliminarUsuario}>
+          Eliminar Usuario
         </button>
       </div>
     </section>
