@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
-import Registro from "../pages/Registro";
 import Login from "../pages/Login";
 import RegistroDescargue from "../pages/RegistroDescargue";
 import FormularioAditivos from "../pages/FormularioAditivos";
 import Inicio from "../pages/Inicio";
 import RutaProtegida from "../Components/RutaProtegida";
 import OcultarVista from "../Components/OcultarVista";
+import RegistroInventario from "../pages/RegistroInventario";
 
 export const enrutador = createBrowserRouter([
   {
@@ -15,15 +15,15 @@ export const enrutador = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <OcultarVista contenido={<Login />}/>
+    element: <OcultarVista contenido={<Login />}/>,
   },
   {
     path: "/home",
-    element: <RutaProtegida contenido={<Home />} />
+    element: <RutaProtegida contenido={<Home />} />,
   },
   {
     path: "/inventario",
-    element: <RutaProtegida contenido={<Registro />} />
+    element: <RutaProtegida contenido={<RegistroInventario />} />
   },
   {
     path: "/registroDescargue",

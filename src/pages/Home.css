@@ -27,7 +27,7 @@ h3{
 
 .contenedor-botones {
   width: 400px;
-  height: 600px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

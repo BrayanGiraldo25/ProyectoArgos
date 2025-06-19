@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Inventario from "../Components/Inventario";
 import { alerta_confirmacion, aletrta_error, alerta_redireccion, generar_token } from "../helpers/funciones";
-let db_usuarios = "https://back-json-server-qwv1.onrender.com/usuarios"
+let db_usuarios = "http://localhost:8080/usuarios"
 
 
 function Login() {
@@ -32,11 +32,11 @@ function Login() {
      
 
     function iniciar_sesion() {
-        let auth = usuarios.find((item) => item.documento === getUsuario && item.contrasena === getContraseñaInicioSesion);
+        let auth = usuarios.find((item) => item.documento === getUsuario && item.contraseña === getContraseñaInicioSesion);
         if (auth) {
             alerta_redireccion("/home", redireccion, "Bienvenido!");
             localStorage.setItem("token", generar_token());
-            localStorage.setItem("usuario", auth.nombre);
+            localStorage.setItem("usuario", JSON.stringify(auth));
         } else {
             aletrta_error("Usuario y/o contraseña incorrectos.");
         }
@@ -50,11 +50,14 @@ function Login() {
             alerta_confirmacion("Se ha registrado correctamente!")
             fetch(db_usuarios, {
                 method: "POST",
+                headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
-                    nombre: getNombre,
                     documento: getDocumento,
-                    planta: getPlanta,
-                    contrasena: getContraseña
+                    nombre: getNombre,
+                    contraseña: getContraseña,
+                    planta: {
+                        idplanta: getPlanta
+                    }
                 })
             })
             redireccion("/")
@@ -82,7 +85,10 @@ function Login() {
                     <h2>Registro</h2>
                     <input onChange={(e) => setNombre(e.target.value)} type="text" id="nombre" placeholder="Nombre completo" required />
                     <input onChange={(e) => setDocumento(e.target.value)} type="number" id="documento" placeholder="Documento" required />
-                    <input onChange={(e) => setPlanta(e.target.value)} type="text" id="planta" placeholder="Planta" required />
+                    <select name="" id="" required value={getPlanta}  onChange={(e)=> setPlanta(e.target.value)}>
+                        <option value="">Seleccione su planta</option>
+                        <option value="PT001">PT Medellín</option>
+                    </select>
                     <input onChange={(e) => setContraseña(e.target.value)} type="password" id="contraseña" placeholder="Contraseña" autoComplete="new-password" required />
                 </form>
                 <div className="btnLoginRegistro">
